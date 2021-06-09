@@ -12,9 +12,9 @@ export default function Auth() {
 
   const login = async () => {
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/auth/jwt/create`, {
+      await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/auth/jwt/create/`, {
         method: 'POST',
-        body: JSON.stringify({ username: username, password, password }),
+        body: JSON.stringify({ username: username, password: password }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -109,9 +109,9 @@ export default function Auth() {
           <div className="text-sm">
             <span
               onClick={() => setIsLogin(!isLogin)}
-              className="font-medium text-white hover:text-indigo-500 cursor-pointer"
+              className="cursor-pointer font-medium text-white hover:text-indigo-500"
             >
-              change mode?
+              change mode ?
             </span>
           </div>
         </div>
