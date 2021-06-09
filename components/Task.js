@@ -8,7 +8,7 @@ const cookie = new Cookie();
 export default function Task({ task, taskDeleted }) {
   const { setSelectedTask } = useContext(StateContext);
   const deleteTask = async () => {
-    await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${task.id}`, {
+    await fetch(`${process.env.NEXT_PUBLIC_RESTAPI_URL}api/tasks/${task.id}/`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
